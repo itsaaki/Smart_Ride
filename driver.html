@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Driver App</title>
+  <link rel="stylesheet" href="css/driver.css" />
+
+  <!-- Leaflet CSS -->
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script src="js/driver.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="wallet-box">Driver's wallet</div>
+    <div class="location-box">
+      <div id="map"></div>
+      <div id="address">Locating...</div>
+    </div>
+    <div class="ride-notification" id="ride-box">
+      <div id="ride-details"></div>
+      <div id="ride-buttons">
+        <button onclick="acceptRide()">Accept</button>
+        <button onclick="rejectRide()">Reject</button>
+      </div>
+      <div id="ride-response"></div>
+    </div>    
+  </div>
+
+</body>
+</html>

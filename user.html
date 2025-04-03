@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>SmartRide - Book a Ride</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/user.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script defer src="js/user.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="">Booking</a>
+      <a href="tracking.php">Tracking</a>
+    </nav>
+    <div class="container">
+      <div class="booking-form">
+        <h2>Book a Ride</h2>
+        <hr class="divider" />
+        <label class="vehicle-label">Choose Vehicle:</label>
+        <div class="radio-group">
+          <input type="radio" id="bike" name="vehicle" value="bike" checked />
+          <label for="bike">Bike</label>
+          <input type="radio" id="car4" name="vehicle" value="car4" />
+          <label for="car4">Car (4 seats)</label>
+          <input type="radio" id="car7" name="vehicle" value="car7" />
+          <label for="car7">Car (7 seats)</label>
+        </div>
+        <label class="location-label">Enter location:</label>
+        <input
+          type="text"
+          id="pickup"
+          placeholder="Enter pickup location"
+          oninput="suggestAddress('pickup', 'pickup-results')"
+        />
+        <div id="pickup-results" class="autocomplete-results"></div>
+        <input
+          type="text"
+          id="dropoff"
+          placeholder="Enter drop-off location"
+          oninput="suggestAddress('dropoff', 'dropoff-results')"
+        />
+        <div id="dropoff-results" class="autocomplete-results"></div>
+        <label class="payment-label">Payment Method:</label>
+        <select id="payment-method">
+          <option value="cash" selected>Cash</option>
+          <option value="card">Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="momo">Momo</option>
+          <option value="vnpay">VNPay</option>
+        </select>
+        <hr class="divider" />
+        <p><strong>Total:</strong></p>
+        <p>Distance: <span id="distanceValue">-</span> km</p>
+        <p>Duration: <span id="durationValue">-</span> min</p>
+        <p>Price: <span id="fareValue">-</span> VND</p>
+        <button onclick="bookRide()">Book Now</button>
+        <a class="invoice" href="invoice.html">Invoice</a>
+      </div>
+      <div id="map" class="map"></div>
+      <div id="route-guide">
+        <h3>Route Guide</h3>
+        <div id="route-steps"></div>
+      </div>
+    </div>
+  </body>
+</html>
