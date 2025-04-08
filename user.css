@@ -1,0 +1,157 @@
+/* General styles for the user booking page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Container layout */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+}
+
+/* Booking Form Styles */
+.booking-form {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form input[type="text"],
+.booking-form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Divider line */
+.divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+/* Label for location input */
+.location-label, .vehicle-label, .payment-label {
+    font-weight: bold;
+    margin-top: 15px; /* Adds spacing */
+    font-size: 16px; /* Makes the font slightly bigger */
+    color: #333; /* Change text color */
+}
+
+/* Radio Group Styling */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.radio-group input[type="radio"] {
+    display: none;
+}
+.radio-group label {
+    display: flex;
+    align-items: center;
+    background: #ddd;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.radio-group input[type="radio"]:checked + label {
+    background: #333;
+    color: #fff;
+}
+
+/* Dropdown list */
+.booking-form select {
+    padding: 10px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Fare display styling */
+.booking-form p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 3px 0;
+    font-size: 14px;
+}
+
+.booking-form p strong {
+    min-width: 90px; /* Đảm bảo khoảng cách giữa nhãn và giá trị */
+    text-align: left;
+}
+
+.booking-form p span {
+    font-weight: bold;
+}
+
+/* Make the "Total" text bigger */
+.booking-form p:first-of-type strong {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Book Now button */
+.booking-form button {
+    background: #333;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.booking-form button:hover {
+    background: #444;
+}
+
+/* Map container */
+.map {
+    flex: 2;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
